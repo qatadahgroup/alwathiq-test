@@ -3092,6 +3092,81 @@
     .sticky-bar { padding-bottom: calc(12px + env(safe-area-inset-bottom)) !important; }
   }
 
+
+
+  /* ===== V14 CTA OPTIONS ===== */
+  .cta-choice-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .btn-form-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(232,228,223,0.78);
+    border: 1px solid rgba(232,228,223,0.22);
+    background: rgba(232,228,223,0.04);
+    padding: 13px 28px;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-form-secondary:hover {
+    color: #fff;
+    border-color: rgba(232,228,223,0.42);
+    background: rgba(232,228,223,0.08);
+    transform: translateY(-1px);
+  }
+
+  .direct-call-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(232,228,223,0.46);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .direct-call-link:hover { color: var(--cream); }
+
+  .call-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(232,228,223,0.55);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .detail-cta-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .detail-cta-stack .btn-primary { margin-bottom: 0; }
+
+  @media (max-width: 640px) {
+    .btn-form-secondary {
+      width: min(100%, 320px);
+      padding: 12px 18px;
+      text-align: center;
+    }
+    .detail-cta-stack .btn-primary,
+    .cta-buttons .btn-primary {
+      width: min(100%, 340px);
+      text-align: center;
+    }
+  }
+
 </style>
 
 <!-- Google tag (GA4) -->
@@ -3344,12 +3419,12 @@
 </div>
 </div>
 <div class="hero-cta">
-<a class="btn-primary" data-ar="احجز مقعدك معنا" data-en="Book your seat with us" href="https://forms.gle/zSgt68NMhqxfxEVSA" target="_blank" rel="noopener noreferrer">
+<a class="btn-primary primary-whatsapp-cta" data-ar="احجز مقعدك معنا" data-en="Book your seat with us" href="https://wa.me/96592227483?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AD%D8%AC%D8%B2%20%D9%85%D9%82%D8%B9%D8%AF%20%D9%85%D8%A8%D8%AF%D8%A6%D9%8A%20%D9%81%D9%8A%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%AB%20%D8%A7%D9%84%D9%88%D8%A7%D8%AB%D9%82.%20%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A7%D9%84%D9%8A%D8%A9%20%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B2." target="_blank" rel="noopener noreferrer">
       احجز مقعدك معنا
     </a>
-<a class="btn-secondary" data-ar="عندك سؤال؟ نحن هنا" data-en="Have a Question? We're Here" href="https://wa.me/96592227483" target="_blank" rel="noopener noreferrer">
-<span class="whatsapp-dot"></span>
-      عندك سؤال؟ نحن هنا
+<a class="btn-secondary direct-call-link" data-ar="اتصل علينا الآن إذا أحببت" data-en="Call us now if you prefer" href="tel:+96592227483">
+<span class="call-dot"></span>
+      اتصل علينا الآن إذا أحببت
     </a>
 </div>
 </section>
@@ -3837,9 +3912,13 @@
 <div data-ar="الدفعة 47 — من 16 حتى 21 مايو 2026 — 4 مقاعد متبقية" data-en="Batch 47 — May 16 to 21, 2026 — 4 Seats Remaining" id="batchDetail" style="font-size:13px; color:rgba(232,228,223,0.5); margin-bottom:12px; letter-spacing:0.5px;">
           الدفعة 47 — من 16 حتى 21 مايو 2026 — 4 مقاعد متبقية
         </div>
-<a class="btn-primary" data-ar="احجز مقعدك معنا هنا" data-en="Book your seat with us" href="https://forms.gle/zSgt68NMhqxfxEVSA" id="mainCTA" style="display:inline-block;" target="_blank" rel="noopener noreferrer">
-          احجز مقعدك معنا هنا<span class="seats-sub" data-ar="⚠ 4 مقاعد متبقية" data-en="⚠ 4 Seats Remaining" id="batchSeatsLabel">⚠ 4 مقاعد متبقية</span>
+<div class="detail-cta-stack">
+<a class="btn-primary primary-whatsapp-cta" data-ar="احجز مقعدك معنا" data-en="Book your seat with us" href="https://wa.me/96592227483?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AD%D8%AC%D8%B2%20%D9%85%D9%82%D8%B9%D8%AF%20%D9%85%D8%A8%D8%AF%D8%A6%D9%8A%20%D9%81%D9%8A%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%AB%20%D8%A7%D9%84%D9%88%D8%A7%D8%AB%D9%82.%20%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A7%D9%84%D9%8A%D8%A9%20%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B2." id="mainCTA" style="display:inline-block;" target="_blank" rel="noopener noreferrer">
+          احجز مقعدك معنا<span class="seats-sub" data-ar="⚠ 4 مقاعد متبقية" data-en="⚠ 4 Seats Remaining" id="batchSeatsLabel">⚠ 4 مقاعد متبقية</span>
 </a>
+<a class="btn-form-secondary" data-ar="تعبئة استمارة الحجز المبدئي" data-en="Fill the preliminary reservation form" href="https://forms.gle/zSgt68NMhqxfxEVSA" id="detailFormCTA" target="_blank" rel="noopener noreferrer">تعبئة استمارة الحجز المبدئي</a>
+<a class="direct-call-link" data-ar="أو اتصل علينا الآن إذا أحببت" data-en="Or call us now if you prefer" href="tel:+96592227483" id="detailCallCTA"><span class="call-dot"></span>أو اتصل علينا الآن إذا أحببت</a>
+</div>
 </div>
 </div>
 <div class="details-grid reveal">
@@ -4030,14 +4109,15 @@
 <section class="cta-section">
 <div class="container">
 <h2 class="reveal" data-ar="المقعد الذي لا تحجزه اليوم" data-en="The Seat You Don't Book Today" id="ctaTitle">المقعد الذي لا تحجزه اليوم<br/><span data-ar="سيؤخرك عن تقدمك غداً" data-en="Will Delay Your Progress Tomorrow">سيؤخرك عن تقدمك غداً</span></h2>
-<p class="reveal" data-ar="بعد تسجيلك سنتواصل معك لتحديد موعد الاجتماع التعريفي؛ جلسة قصيرة تحصل فيها على كل التفاصيل وتتخذ قرارك بكامل المعلومات." data-en="After registration, we'll contact you to schedule the introductory meeting; a short session where you'll get all details and make your decision with full information.">بعد تسجيلك سنتواصل معك لتحديد موعد الاجتماع التعريفي؛ جلسة قصيرة تحصل فيها على كل التفاصيل وتتخذ قرارك بكامل المعلومات.</p>
+<p class="reveal" data-ar="بعد تواصلك معنا سنتابع معك الخطوة المناسبة؛ رسالة واتساب سريعة، أو استمارة حجز مبدئي، أو اتصال مباشر إذا أحببت." data-en="After you contact us, we will guide you to the right next step: a quick WhatsApp message, the preliminary reservation form, or a direct call if you prefer.">بعد تواصلك معنا سنتابع معك الخطوة المناسبة؛ رسالة واتساب سريعة، أو استمارة حجز مبدئي، أو اتصال مباشر إذا أحببت.</p>
 <div class="cta-buttons reveal">
-<a class="btn-primary" data-ar="احجز مقعدك معنا" data-en="Book your seat with us" href="https://forms.gle/zSgt68NMhqxfxEVSA" id="bottomCTA" aria-label="احجز مقعدك في برنامج المتحدث الواثق" target="_blank" rel="noopener noreferrer">
+<a class="btn-primary primary-whatsapp-cta" data-ar="احجز مقعدك معنا" data-en="Book your seat with us" href="https://wa.me/96592227483?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AD%D8%AC%D8%B2%20%D9%85%D9%82%D8%B9%D8%AF%20%D9%85%D8%A8%D8%AF%D8%A6%D9%8A%20%D9%81%D9%8A%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%AB%20%D8%A7%D9%84%D9%88%D8%A7%D8%AB%D9%82.%20%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A7%D9%84%D9%8A%D8%A9%20%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B2." id="bottomCTA" aria-label="احجز مقعدك في برنامج المتحدث الواثق" target="_blank" rel="noopener noreferrer">
         احجز مقعدك معنا
       </a>
-<a class="whatsapp-link" data-ar="تريد تعرف أكثر قبل التسجيل؟ تواصل معنا" data-en="Want to Know More Before Registering? Contact Us" href="https://wa.me/96592227483" target="_blank" rel="noopener noreferrer">
-<span class="whatsapp-dot"></span>
-        تريد تعرف أكثر قبل التسجيل؟ تواصل معنا
+<a class="btn-form-secondary" data-ar="تعبئة استمارة الحجز المبدئي" data-en="Fill the preliminary reservation form" href="https://forms.gle/zSgt68NMhqxfxEVSA" id="bottomFormCTA" target="_blank" rel="noopener noreferrer">تعبئة استمارة الحجز المبدئي</a>
+<a class="direct-call-link" data-ar="أو اتصل علينا الآن إذا أحببت" data-en="Or call us now if you prefer" href="tel:+96592227483" id="bottomCallCTA">
+<span class="call-dot"></span>
+        أو اتصل علينا الآن إذا أحببت
       </a>
 </div>
 </div>
@@ -4081,7 +4161,7 @@
 <div class="countdown-sep">:</div>
 <div class="countdown-unit"><span id="cdSecs">--</span><small data-ar="ثانية" data-en="second">ثانية</small></div>
 </div>
-<a class="btn-primary pulse-anim" data-ar="احجز مقعدك معنا" data-en="Book your seat with us" href="https://forms.gle/zSgt68NMhqxfxEVSA" id="stickyCTA" aria-label="احجز مقعدك في برنامج المتحدث الواثق" target="_blank" rel="noopener noreferrer">احجز مقعدك معنا</a>
+<a class="btn-primary pulse-anim primary-whatsapp-cta" data-ar="احجز مقعدك معنا" data-en="Book your seat with us" href="https://wa.me/96592227483?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AD%D8%AC%D8%B2%20%D9%85%D9%82%D8%B9%D8%AF%20%D9%85%D8%A8%D8%AF%D8%A6%D9%8A%20%D9%81%D9%8A%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%AB%20%D8%A7%D9%84%D9%88%D8%A7%D8%AB%D9%82.%20%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%A9%20%D8%A7%D9%84%D8%AA%D8%A7%D9%84%D9%8A%D8%A9%20%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B2." id="stickyCTA" aria-label="احجز مقعدك في برنامج المتحدث الواثق" target="_blank" rel="noopener noreferrer">احجز مقعدك معنا</a>
 </div>
 <script>
   // بيانات الدفعات
@@ -4092,9 +4172,27 @@
 
   let selectedBatch = batches[0];
 
+  const CTA_PHONE = '96592227483';
+  const CTA_FORM_URL = 'https://forms.gle/zSgt68NMhqxfxEVSA';
+  const CTA_CALL_URL = 'tel:+96592227483';
+  function buildWhatsAppCTA(batch) {
+    const isEn = (document.documentElement.lang || 'ar') === 'en';
+    const batchName = batch && batch.name ? batch.name : (isEn ? 'the selected batch' : 'الدفعة المختارة');
+    const batchDate = batch && batch.date ? batch.date : '';
+    const text = isEn
+      ? `Hello, I would like to reserve a preliminary seat in The Confident Speaker Program.
+Selected batch: ${batchName}${batchDate ? ' — ' + batchDate : ''}.
+Please let me know the next step to confirm the reservation.`
+      : `السلام عليكم، أرغب بحجز مقعد مبدئي في برنامج المتحدث الواثق.
+الدفعة المختارة: ${batchName}${batchDate ? ' — ' + batchDate : ''}.
+أود معرفة الخطوة التالية لتأكيد الحجز.`;
+    return `https://wa.me/${CTA_PHONE}?text=${encodeURIComponent(text)}`;
+  }
+
   function updatePage(batch) {
     selectedBatch = batch;
-    const formUrl = `https://forms.gle/zSgt68NMhqxfxEVSA?entry.batch=${encodeURIComponent(batch.name)}`;
+    const formUrl = CTA_FORM_URL;
+    const whatsappUrl = buildWhatsAppCTA(batch);
 
     // تحديث التوقيت التنازلي حسب الدفعة المختارة
     if (batch.targetDate && typeof startCountdown === 'function') {
@@ -4112,7 +4210,7 @@
           ? `${batch.urgent ? '⚠ ' : ''}${batch.seats} Seats Remaining`
           : `${batch.urgent ? '⚠ ' : ''}المتبقي ${batch.seats} مقاعد`;
         mainCTA.innerHTML = `${mainText}<span class="seats-sub">${seatsText}</span>`;
-        mainCTA.href = formUrl;
+        mainCTA.href = whatsappUrl;
       }
 
     // تحديث قسم التفاصيل
@@ -4141,13 +4239,13 @@
     if (stickyDate) stickyDate.textContent = isEn
       ? (batch.id === '1' ? 'May 16 — 21, 2026' : 'June 6 — 11, 2026')
       : batch.date;
-    if (stickyCTA) stickyCTA.href = formUrl;
+    if (stickyCTA) stickyCTA.href = whatsappUrl;
 
 
 
     // تحديث زر النهاية
     const bottomCTA = document.getElementById('bottomCTA');
-    if (bottomCTA) bottomCTA.href = formUrl;
+    if (bottomCTA) bottomCTA.href = whatsappUrl;
   }
 
   // تفعيل اختيار الدفعات
@@ -4611,11 +4709,22 @@
     }
 
     // تحديث أزرار واتساب (تحوي نقطة)
-    document.querySelectorAll('.btn-secondary').forEach(btn => {
+    document.querySelectorAll('.btn-secondary:not(.direct-call-link)').forEach(btn => {
       const dot = btn.querySelector('.whatsapp-dot');
       btn.innerHTML = '';
       if (dot) btn.appendChild(dot);
       btn.appendChild(document.createTextNode(' ' + t.waBtn));
+    });
+
+    // تحديث روابط الاتصال المباشر مع الحفاظ على النقطة الصغيرة
+    document.querySelectorAll('.direct-call-link').forEach(btn => {
+      const label = lang === 'en' ? (btn.getAttribute('data-en') || 'Or call us now if you prefer') : (btn.getAttribute('data-ar') || 'أو اتصل علينا الآن إذا أحببت');
+      btn.innerHTML = '<span class="call-dot"></span>' + label;
+    });
+
+    // تحديث روابط الاستمارة الثانوية
+    document.querySelectorAll('.btn-form-secondary').forEach(btn => {
+      btn.textContent = lang === 'en' ? (btn.getAttribute('data-en') || 'Fill the preliminary reservation form') : (btn.getAttribute('data-ar') || 'تعبئة استمارة الحجز المبدئي');
     });
 
     // تحديث زر التسجيل النهائي
@@ -5023,6 +5132,17 @@
 
   var API_URL = 'https://script.google.com/macros/s/AKfycbwLfjW6KlJqtc1oUv1jDsqWnai_q90Kv4BO_8uZj60odrYhW9kZEfzRxcFwUNuG58iyog/exec';
   var FORM_URL = 'https://forms.gle/zSgt68NMhqxfxEVSA';
+  var CTA_PHONE = '96592227483';
+  var CTA_CALL_URL = 'tel:+96592227483';
+  function buildDynamicWhatsAppUrl(batch) {
+    var isEn = currentLang() === 'en';
+    var batchName = batch ? (isEn ? batch.nameEn : batch.nameAr) : (isEn ? 'the selected batch' : 'الدفعة المختارة');
+    var batchDate = batch ? (isEn ? batch.dateEn : batch.dateAr) : '';
+    var message = isEn
+      ? 'Hello, I would like to reserve a preliminary seat in The Confident Speaker Program.\nSelected batch: ' + batchName + (batchDate ? ' — ' + batchDate : '') + '.\nPlease let me know the next step to confirm the reservation.'
+      : 'السلام عليكم، أرغب بحجز مقعد مبدئي في برنامج المتحدث الواثق.\nالدفعة المختارة: ' + batchName + (batchDate ? ' — ' + batchDate : '') + '.\nأود معرفة الخطوة التالية لتأكيد الحجز.';
+    return 'https://wa.me/' + CTA_PHONE + '?text=' + encodeURIComponent(message);
+  }
   var DEFAULT_COMPLETED_BATCHES = 46;
   var state = { batches: [], selectedId: null, countdownTimer: null, applying: false };
   var DEFAULT_VENUE_AR = 'فندق سيمفوني ستايل — السالمية';
@@ -5233,11 +5353,11 @@
   function updateMainCTA(batch) {
     var mainCTA = document.getElementById('mainCTA');
     if (!mainCTA) return;
-    mainCTA.href = FORM_URL;
+    mainCTA.href = buildDynamicWhatsAppUrl(batch);
     mainCTA.removeAttribute('data-ar');
     mainCTA.removeAttribute('data-en');
     mainCTA.textContent = '';
-    var main = currentLang() === 'en' ? 'Book your seat with us' : 'احجز مقعدك معنا هنا';
+    var main = currentLang() === 'en' ? 'Book your seat with us' : 'احجز مقعدك معنا';
     mainCTA.appendChild(document.createTextNode(main));
     var sub = document.createElement('span');
     sub.className = 'seats-sub';
@@ -5347,9 +5467,18 @@
     setLocalized(document.getElementById('stickyDate'), batch.nameAr + ' — ' + batch.dateAr, batch.nameEn + ' — ' + batch.dateEn);
 
     updateMainCTA(batch);
+    var whatsappUrl = buildDynamicWhatsAppUrl(batch);
     ['stickyCTA','bottomCTA'].forEach(function(id){
       var link = document.getElementById(id);
+      if (link) link.href = whatsappUrl;
+    });
+    ['detailFormCTA','bottomFormCTA'].forEach(function(id){
+      var link = document.getElementById(id);
       if (link) link.href = FORM_URL;
+    });
+    ['detailCallCTA','bottomCallCTA'].forEach(function(id){
+      var link = document.getElementById(id);
+      if (link) link.href = CTA_CALL_URL;
     });
 
     updateCountdown(batch.targetDate);
