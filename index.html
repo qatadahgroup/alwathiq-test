@@ -2913,6 +2913,185 @@
     .batch-selector.dynamic-clean .batch-status-chip { font-size: 10px !important; padding: 3px 8px !important; }
     #batchDetail { font-size: 12px !important; padding-left: 6px; padding-right: 6px; }
   }
+
+
+  /* ===== V13: HARD MOBILE OVERFLOW FIX ===== */
+  /* المشكلة في الإنجليزية كانت من قواعد قديمة تجبر بعض النصوص على سطر واحد
+     ومن عناصر أوسع من شاشة الهاتف، خصوصًا في العرض الأفقي. */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  body, main, section, .section, .container,
+  .trainer-section, .trainer-inner, .trainer-content,
+  .trainer-fullbg, .trainer-fullbg-inner, .trainer-fullbg-content,
+  .testimonials-section, .testimonials-grid, .testimonial-card,
+  .details-section, .details-grid, .detail-cell,
+  .batch-section, #batchDetail, .batch-card, .batch-selector,
+  .inside-video, .inside-videos-grid, .slider-section, .slider-wrap,
+  .gallery-slider, .video-slider, .faq-section, .faq-item,
+  .cta-section, footer {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  html[lang="en"] .trainer-content h2,
+  html[lang="en"] .trainer-fullbg-content h2,
+  html[lang="en"] #trainerName,
+  html[lang="en"] [data-en*="Qatadah"],
+  html[lang="en"] [data-en*="AlMaian"] {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    max-width: 100% !important;
+    letter-spacing: 0 !important;
+  }
+
+  html[dir="ltr"] h1,
+  html[dir="ltr"] h2,
+  html[dir="ltr"] h3,
+  html[dir="ltr"] h4,
+  html[dir="ltr"] p,
+  html[dir="ltr"] li,
+  html[dir="ltr"] span,
+  html[dir="ltr"] div,
+  html[dir="ltr"] a,
+  html[dir="ltr"] button,
+  html[dir="ltr"] summary {
+    max-width: 100% !important;
+    white-space: normal;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  html[dir="ltr"] .btn-primary,
+  html[dir="ltr"] .lang-btn,
+  html[dir="ltr"] .batch-option,
+  html[dir="ltr"] .countdown-unit span,
+  html[dir="ltr"] .countdown-unit small {
+    overflow-wrap: normal !important;
+    word-break: keep-all !important;
+  }
+
+  @media (max-width: 900px) {
+    .section {
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+    }
+
+    .trainer-inner,
+    .problem-intro,
+    .details-grid,
+    .testimonials-grid,
+    .inside-videos-grid,
+    .outcome-grid,
+    .stats-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+    }
+
+    .trainer-fullbg {
+      min-height: auto !important;
+      background-position: center top !important;
+    }
+
+    .trainer-fullbg-inner {
+      padding: 72px 18px !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+
+    .trainer-fullbg-content,
+    .trainer-content {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    html[lang="en"] .trainer-fullbg-content h2,
+    html[lang="en"] .trainer-content h2,
+    html[lang="en"] #trainerName {
+      font-size: clamp(28px, 8vw, 54px) !important;
+      line-height: 1.12 !important;
+      white-space: normal !important;
+    }
+
+    .testimonial-card {
+      width: 100% !important;
+      padding: 26px 22px !important;
+      overflow: hidden !important;
+    }
+
+    .testimonial-card p,
+    .testimonial-role {
+      font-size: 14px !important;
+      line-height: 1.75 !important;
+      max-width: 100% !important;
+      overflow-wrap: anywhere !important;
+    }
+
+    .lang-switcher {
+      max-width: calc(100vw - 24px) !important;
+      left: 12px !important;
+      right: auto !important;
+    }
+
+    .sticky-bar {
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      align-items: center !important;
+      justify-items: stretch !important;
+      gap: 10px !important;
+      padding: 12px 14px !important;
+      overflow: hidden !important;
+    }
+
+    .sticky-bar .sticky-info,
+    .sticky-countdown,
+    .sticky-bar .btn-primary,
+    .sticky-bar #stickyCTA {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    .sticky-countdown {
+      justify-content: center !important;
+      gap: 4px !important;
+      overflow: hidden !important;
+    }
+
+    .sticky-bar .btn-primary,
+    .sticky-bar #stickyCTA {
+      white-space: normal !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+
+    .countdown-unit {
+      min-width: 34px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section { padding-left: 16px !important; padding-right: 16px !important; }
+    html[lang="en"] .trainer-fullbg-content h2,
+    html[lang="en"] .trainer-content h2,
+    html[lang="en"] #trainerName {
+      font-size: clamp(26px, 9vw, 42px) !important;
+    }
+    .sticky-bar { padding-bottom: calc(12px + env(safe-area-inset-bottom)) !important; }
+  }
+
 </style>
 
 <!-- Google tag (GA4) -->
