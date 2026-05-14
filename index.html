@@ -3166,7 +3166,24 @@
       text-align: center;
     }
   }
+.batch-selector.is-loading {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.batch-loading-text {
+  width: 100%;
+  max-width: 620px;
+  padding: 22px 24px;
+  border: 1px solid rgba(232,228,223,0.16);
+  background: rgba(232,228,223,0.04);
+  color: rgba(232,228,223,0.65);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
 </style>
 <!-- Google tag (GA4) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1HYQ6E1KP7"></script>
@@ -3875,17 +3892,8 @@
 <!-- اختيار الدفعة -->
 <div class="batch-section reveal">
 <p class="batch-intro" data-ar="اختر الدفعة التي تناسب مواعيدك:" data-en="Choose the batch that fits your schedule:">اختر الدفعة التي تناسب مواعيدك:</p>
-<div class="batch-selector" id="batchSelector">
-<div class="batch-option selected" data-batch="1" data-date="16 — 21 مايو 2026" data-seats="4">
-<span class="batch-num" data-ar="الدفعة 47" data-en="Batch 47">الدفعة 47</span>
-<span class="batch-date" data-ar="16 — 21 مايو 2026" data-en="May 16 — 21, 2026">16 — 21 مايو 2026</span>
-<span class="batch-seats red" data-ar="4 مقاعد فقط" data-en="4 Seats Only">4 مقاعد فقط</span>
-</div>
-<div class="batch-option" data-batch="2" data-date="6 — 11 يونيو 2026" data-seats="5">
-<span class="batch-num" data-ar="الدفعة 48" data-en="Batch 48">الدفعة 48</span>
-<span class="batch-date" data-ar="6 — 11 يونيو 2026" data-en="June 6 — 11, 2026">6 — 11 يونيو 2026</span>
-<span class="batch-seats red" data-ar="5 مقاعد فقط" data-en="5 Seats Only">5 مقاعد فقط</span>
-</div>
+<div class="batch-selector dynamic-clean is-loading" id="batchSelector">
+  <div class="batch-loading-text">جاري تحميل الدفعات المتاحة...</div>
 </div>
 <div style="text-align:center; margin-top:28px;">
 <div data-ar="الدفعة 47 — من 16 حتى 21 مايو 2026 — 4 مقاعد متبقية" data-en="Batch 47 — May 16 to 21, 2026 — 4 Seats Remaining" id="batchDetail" style="font-size:13px; color:rgba(232,228,223,0.5); margin-bottom:12px; letter-spacing:0.5px;">الدفعة 47 — من 16 حتى 21 مايو 2026 — 4 مقاعد متبقية</div>
@@ -5470,6 +5478,7 @@ Please let me know the next step to confirm the reservation.`
     var selector = document.getElementById('batchSelector');
     if (selector) {
       selector.classList.add('dynamic-clean');
+      selector.classList.remove('is-loading');
       selector.innerHTML = '';
 
       state.batches.forEach(function(batch){
